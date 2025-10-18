@@ -1930,6 +1930,24 @@ body {
         margin-bottom: 6px;
     }
     
+    /* 푸터 정렬 개선 */
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section h3,
+    .footer-section h4 {
+        text-align: center;
+    }
+    
+    .footer-contact {
+        text-align: center;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
     /* 플로팅 버튼 */
     .floating-actions {
         bottom: 15px;
