@@ -1771,12 +1771,34 @@ body {
     
     /* 왜 베리굿하수구인가 섹션 */
     .why-image {
-        height: 250px;
+        display: none;
     }
     
-    .why-image img {
-        height: 250px;
-        object-position: center top;
+    .why-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .why-text {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    /* 서비스 지역 섹션 */
+    .area-image {
+        display: none;
+    }
+    
+    .area-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .area-text {
+        max-width: 100%;
+        margin: 0 auto;
     }
     
     .section-header p {
