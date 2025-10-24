@@ -493,7 +493,8 @@ body {
     font-size: 1.25rem;
     margin-bottom: 40px;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
 .hero-buttons {
