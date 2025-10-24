@@ -166,8 +166,8 @@ img {
     /* 기존 변수명 호환성을 위한 매핑 */
     --primary-color: var(--brand-blue);
     --primary-dark: var(--brand-blue-dark);
-    --secondary-color: var(--brand-orange);
-    --accent-color: var(--brand-yellow);
+    --secondary-color: var(--brand-blue-light);
+    --accent-color: var(--brand-blue);
     --text-dark: var(--text-primary);
     --text-light: var(--text-secondary);
     --text-white: #ffffff;
@@ -456,7 +456,7 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-yellow) 100%);
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
     color: var(--primary-white);
     padding: 12px 24px;
     border-radius: 50px;
@@ -2125,12 +2125,17 @@ body {
     margin-top: 40px;
 }
 
+.youtube-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .youtube-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    max-width: 800px;
-    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .youtube-item {
@@ -2141,6 +2146,47 @@ body {
     transition: var(--transition-slow);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.youtube-item.hidden {
+    display: none;
+}
+
+.youtube-more-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 196, 0.3);
+}
+
+.youtube-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 196, 0.4);
+}
+
+.youtube-more-btn.hidden {
+    display: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .youtube-item:hover {
@@ -2203,10 +2249,15 @@ body {
         margin-top: 30px;
     }
     
+    .youtube-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
     .youtube-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-        max-width: 100%;
+        margin-bottom: 20px;
     }
     
     .youtube-item {
@@ -2224,6 +2275,11 @@ body {
     .youtube-desc {
         font-size: 0.85rem;
     }
+    
+    .youtube-more-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2238,6 +2294,11 @@ body {
     
     .youtube-desc {
         font-size: 0.8rem;
+    }
+    
+    .youtube-more-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
     }
 }
 
