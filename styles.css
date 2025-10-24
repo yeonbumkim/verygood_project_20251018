@@ -405,10 +405,10 @@ body {
 /* 히어로 섹션 */
 .hero {
     min-height: 100vh;
+    background: var(--gradient-blue-soft);
     display: flex;
     align-items: center;
     position: relative;
-    background: var(--bg-dark);
     overflow: hidden;
     padding-top: 60px;
 }
@@ -450,24 +450,22 @@ body {
     position: relative;
     z-index: 3;
     text-align: center;
-    color: var(--text-white);
     max-width: 900px;
     margin: 0 auto;
 }
 
 .hero-badge {
     display: inline-block;
-    background: var(--gradient-accent);
-    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-yellow) 100%);
+    color: var(--primary-white);
     padding: 12px 24px;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 30px;
-    box-shadow: var(--shadow-glow);
+    margin-bottom: 32px;
+    box-shadow: 0 4px 15px rgba(59, 130, 196, 0.2);
     text-transform: uppercase;
     letter-spacing: 1px;
-    animation: glow-pulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow-pulse {
@@ -476,23 +474,26 @@ body {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 900;
     line-height: 1.1;
-    margin-bottom: 30px;
-    background: var(--gradient-primary);
-    background-clip: text;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.hero-title .highlight {
+    color: var(--brand-blue);
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-orange) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(255, 107, 71, 0.3);
+    background-clip: text;
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 50px;
-    opacity: 0.9;
+    font-size: 1.25rem;
+    margin-bottom: 40px;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: var(--text-secondary);
 }
 
 .hero-buttons {
