@@ -138,16 +138,42 @@ img {
 }
 
 :root {
-    --primary-color: #ff6b47;
-    --primary-dark: #e55a42;
-    --secondary-color: #ff9f1c;
-    --accent-color: #ffd23f;
-    --text-dark: #0f0f0f;
-    --text-light: #6b7280;
+    /* 로고 백그라운드 기반 깔끔한 컬러 팔레트 */
+    --primary-white: #FFFFFF;        /* 로고 백그라운드와 동일한 순백색 */
+    --soft-white: #FEFEFE;           /* 극미한 따뜻함이 있는 화이트 */
+    --cream-white: #FDFDFD;          /* 크림 느낌의 화이트 */
+    --pearl-white: #FBFBFB;          /* 진주빛 화이트 */
+    
+    /* 로고에서 추출한 브랜드 색상들 */
+    --brand-blue: #3B82C4;           /* 로고 유니폼 파란색 */
+    --brand-blue-dark: #2563EB;      /* 로고 진한 파란색 */
+    --brand-blue-light: #60A5FA;     /* 밝은 파란색 */
+    --brand-blue-soft: #EFF6FF;      /* 매우 연한 파란색 */
+    --brand-orange: #E55A42;         /* 로고 도구 주황색 */
+    --brand-orange-light: #F97316;   /* 밝은 주황색 */
+    --brand-orange-soft: #FFF7ED;    /* 매우 연한 주황색 */
+    --brand-yellow: #F59E0B;         /* 로고 장갑 노란색 */
+    --brand-yellow-light: #FCD34D;   /* 밝은 노란색 */
+    --brand-yellow-soft: #FFFBEB;    /* 매우 연한 노란색 */
+    
+    /* 중성 색상 - 화이트 베이스에 맞춘 미묘한 톤 */
+    --text-primary: #1F2937;         /* 주요 텍스트 */
+    --text-secondary: #6B7280;       /* 보조 텍스트 */
+    --text-muted: #9CA3AF;           /* 희미한 텍스트 */
+    --border-light: #F3F4F6;         /* 매우 연한 보더 */
+    --border-soft: #E5E7EB;          /* 연한 보더 */
+    
+    /* 기존 변수명 호환성을 위한 매핑 */
+    --primary-color: var(--brand-blue);
+    --primary-dark: var(--brand-blue-dark);
+    --secondary-color: var(--brand-orange);
+    --accent-color: var(--brand-yellow);
+    --text-dark: var(--text-primary);
+    --text-light: var(--text-secondary);
     --text-white: #ffffff;
-    --bg-dark: #0a0a0a;
-    --bg-dark-secondary: #1a1a1a;
-    --bg-light: #f8f9fa;
+    --bg-dark: #1F2937;
+    --bg-dark-secondary: #374151;
+    --bg-light: var(--brand-blue-soft);
     --bg-white: #ffffff;
     --border-light: #e5e7eb;
     --border-dark: #333333;
@@ -155,10 +181,19 @@ img {
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 30px rgba(255, 107, 71, 0.3);
-    --gradient-primary: linear-gradient(135deg, #ff6b47 0%, #ff9f1c 100%);
-    --gradient-secondary: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-    --gradient-accent: linear-gradient(135deg, #ff9f1c 0%, #ffd23f 100%);
+    --shadow-glow: 0 0 30px rgba(59, 130, 196, 0.3);
+    
+    /* 화이트 베이스 그라데이션 */
+    --gradient-white: linear-gradient(135deg, var(--primary-white) 0%, var(--pearl-white) 100%);
+    --gradient-blue-soft: linear-gradient(135deg, var(--primary-white) 0%, var(--brand-blue-soft) 100%);
+    --gradient-orange-soft: linear-gradient(135deg, var(--primary-white) 0%, var(--brand-orange-soft) 100%);
+    --gradient-yellow-soft: linear-gradient(135deg, var(--primary-white) 0%, var(--brand-yellow-soft) 100%);
+    --gradient-brand: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    
+    /* 기존 호환성 */
+    --gradient-primary: var(--gradient-brand);
+    --gradient-secondary: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--brand-yellow) 0%, var(--brand-yellow-light) 100%);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -437,7 +472,7 @@ body {
 
 @keyframes glow-pulse {
     0% { box-shadow: var(--shadow-glow); }
-    100% { box-shadow: 0 0 40px rgba(255, 107, 71, 0.5); }
+    100% { box-shadow: 0 0 40px rgba(59, 130, 196, 0.5); }
 }
 
 .hero-title {
