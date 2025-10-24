@@ -518,6 +518,11 @@ body {
     background: transparent !important;
     border: 3px solid var(--brand-blue);
     color: #000000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background-clip: text;
     box-shadow: 0 6px 20px rgba(59, 130, 196, 0.3);
 }
